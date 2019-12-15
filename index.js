@@ -1,9 +1,14 @@
 function factorialAdd(initNum, addNum, interest, time, nowAge) {
     let amount = initNum
     for (let index = 0; index < time; index++) {
-        amount = amount * interest + addNum
+        amount = Math.round(amount * interest + addNum)
     }
-    console.log(time + nowAge + 1, "+++++++++++++++++++++" ,amount)
+    let beforeAmount = initNum
+    for (let index = 0; index < time - 1; index++) {
+        beforeAmount = Math.round(beforeAmount * interest + addNum)
+    }
+    morethan = amount - beforeAmount 
+    console.log(time + nowAge + 1, "+++++++++++++++++++++" ,amount, beforeAmount, morethan)
 }
+factorialAdd(50, 6, 1.1548, 5, 24)
 
-factorialAdd(200, 7, 1.17, 10, 24)
